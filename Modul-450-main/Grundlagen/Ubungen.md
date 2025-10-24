@@ -5,7 +5,7 @@
 Arbeiten Sie zu zweit und erläutern Sie mind. drei Beispiele, die Sie aus der Praxis kennen.
 Wie werden die Tests durchgeführt?
 
-##Lösung
+## Lösung
 ### Unit Test
 
 Ein Unit Test wird gemacht, um einzelne Teile von einem Programm zu pruefen, zum Beispiel eine Funktion oder Methode. Man schaut, ob dieser Teil das richtige Ergebnis liefert. In der Praxis benutzt man dafuer oft Programme wie JUnit bei Java oder pytest bei Python. Der Entwickler schreibt kleine Testfaelle, wo bestimmte Eingaben getestet werden. Zum Beispiel, wenn eine Funktion zwei Zahlen addieren soll, wird getestet ob bei 2 und 3 wirklich 5 rauskommt. Wenn das klappt, ist der Test bestanden. Diese Tests werden meistens automatisch ausgefuehrt und helfen Fehler frueh zu finden, bevor das ganze Programm fertig ist.
