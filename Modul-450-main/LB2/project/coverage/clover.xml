@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1768546987521" clover="3.2.0">
-  <project timestamp="1768546987521" name="All files">
-    <metrics statements="17" coveredstatements="14" conditionals="8" coveredconditionals="8" methods="6" coveredmethods="4" elements="31" coveredelements="26" complexity="0" loc="17" ncloc="17" packages="1" files="2" classes="2"/>
-    <file name="UserRepository.js" path="C:\Users\Louis Schulle\Documents\Modul-450-main\Modul-450-main\LB2\project\src\user\UserRepository.js">
-      <metrics statements="3" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
-      <line num="3" count="0" type="stmt"/>
-      <line num="7" count="0" type="stmt"/>
-      <line num="11" count="0" type="stmt"/>
-    </file>
+<coverage generated="1768556714435" clover="3.2.0">
+  <project timestamp="1768556714435" name="All files">
+    <metrics statements="14" coveredstatements="14" conditionals="8" coveredconditionals="8" methods="4" coveredmethods="4" elements="26" coveredelements="26" complexity="0" loc="14" ncloc="14" packages="1" files="1" classes="1"/>
     <file name="UserService.js" path="C:\Users\Louis Schulle\Documents\Modul-450-main\Modul-450-main\LB2\project\src\user\UserService.js">
       <metrics statements="14" coveredstatements="14" conditionals="8" coveredconditionals="8" methods="4" coveredmethods="4"/>
       <line num="3" count="4" type="stmt"/>
