@@ -1,0 +1,11 @@
+{
+  "name": "tdd-user-service",
+  "version": "1.0.0",
+  "type": "commonjs",
+  "scripts": {
+    "test": "jest --coverage"
+  },
+  "devDependencies": {
+    "jest": "^29.0.0"
+  }
+}
