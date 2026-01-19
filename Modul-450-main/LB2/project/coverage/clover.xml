@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1768556714435" clover="3.2.0">
-  <project timestamp="1768556714435" name="All files">
+<coverage generated="1768557686155" clover="3.2.0">
+  <project timestamp="1768557686155" name="All files">
     <metrics statements="14" coveredstatements="14" conditionals="8" coveredconditionals="8" methods="4" coveredmethods="4" elements="26" coveredelements="26" complexity="0" loc="14" ncloc="14" packages="1" files="1" classes="1"/>
     <file name="UserService.js" path="C:\Users\Louis Schulle\Documents\Modul-450-main\Modul-450-main\LB2\project\src\user\UserService.js">
       <metrics statements="14" coveredstatements="14" conditionals="8" coveredconditionals="8" methods="4" coveredmethods="4"/>

@@ -1,6 +1,6 @@
 const UserService = require("../src/user/UserService");
 
-describe("UserService", () => {
+describe("UserService – Unit Tests", () => {
   let userRepositoryMock;
   let userService;
 
@@ -13,44 +13,58 @@ describe("UserService", () => {
     userService = new UserService(userRepositoryMock);
   });
 
-  test("throws error when username is empty", () => {
-    expect(() => {
-      userService.createUser({ username: "", email: "test@test.com" });
-    }).toThrow("Username must not be empty");
-
-    expect(userRepositoryMock.save).not.toHaveBeenCalled();
-  });
-
-  test("throws error when email is invalid", () => {
-    expect(() => {
-      userService.createUser({ username: "Max", email: "invalid" });
-    }).toThrow("Email is invalid");
-
-    expect(userRepositoryMock.save).not.toHaveBeenCalled();
-  });
-
-  test("creates user when data is valid", () => {
-    userRepositoryMock.findByEmail.mockReturnValue(null);
-
-    const result = userService.createUser({
-      username: "Max",
-      email: "max@test.com"
+  describe("validateUsername()", () => {
+    test("throws error when username is empty", () => {
+      expect(() => {
+        userService.validateUsername("");
+      }).toThrow("Username must not be empty");
     });
 
-    expect(userRepositoryMock.save).toHaveBeenCalledTimes(1);
-    expect(result).toEqual({ success: true });
+    test("does not throw when username is valid", () => {
+      expect(() => {
+        userService.validateUsername("Max");
+      }).not.toThrow();
+    });
   });
 
-  test("throws error when user already exists", () => {
-    userRepositoryMock.findByEmail.mockReturnValue({});
+  describe("validateEmail()", () => {
+    test("throws error when email is invalid", () => {
+      expect(() => {
+        userService.validateEmail("invalid");
+      }).toThrow("Email is invalid");
+    });
 
-    expect(() => {
-      userService.createUser({
+    test("does not throw when email is valid", () => {
+      expect(() => {
+        userService.validateEmail("max@test.com");
+      }).not.toThrow();
+    });
+  });
+
+  describe("createUser()", () => {
+    test("creates user when data is valid", () => {
+      userRepositoryMock.findByEmail.mockReturnValue(null);
+
+      const result = userService.createUser({
         username: "Max",
         email: "max@test.com"
       });
-    }).toThrow("User already exists");
 
-    expect(userRepositoryMock.save).not.toHaveBeenCalled();
+      expect(userRepositoryMock.save).toHaveBeenCalledTimes(1);
+      expect(result).toEqual({ success: true });
+    });
+
+    test("throws error when user already exists", () => {
+      userRepositoryMock.findByEmail.mockReturnValue({});
+
+      expect(() => {
+        userService.createUser({
+          username: "Max",
+          email: "max@test.com"
+        });
+      }).toThrow("User already exists");
+
+      expect(userRepositoryMock.save).not.toHaveBeenCalled();
+    });
   });
 });
